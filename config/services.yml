@@ -1,0 +1,10 @@
+services:
+    dmzx.confirmusername.listener:
+        class: dmzx\confirmusername\event\listener
+        arguments:
+            - '@language'
+            - '@request'
+            - '@template'
+            - '@user'
+        tags:
+            - { name: event.listener }

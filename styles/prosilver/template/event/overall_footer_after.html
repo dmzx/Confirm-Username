@@ -1,0 +1,15 @@
+{% if S_REGISTRATION %}
+<script>
+$(function() {
+	var $form = $('#register');
+
+	var username_confirm = '';
+	username_confirm += '<dl>';
+	username_confirm += '<dt><label for="username_confirm">{{ lang('CONFIRM_USERNAME')|escape('js') }}{{ lang('COLON')|escape('js') }}</label></dt>';
+	username_confirm += '<dd><input type="text" tabindex="1" name="username_confirm" id="username_confirm" size="25" maxlength="100" value="{{ USERNAME_CONFIRM }}" class="inputbox autowidth" title="{{ lang('CONFIRM_USERNAME')|escape('js') }}" /></dd>';
+	username_confirm += '</dl>';
+
+	$form.find('input[type=text][id=username]').parents('dl').after(username_confirm);
+});
+</script>
+{% endif %}
